@@ -13,7 +13,6 @@ import { GoalsSection } from "./goals-section"
 import { BlogsSection } from "./blogs-section"
 import React from "react"
 
-// Type guard to ensure valid command keys
 const isCommandKey = (key: string): key is keyof typeof commands => {
   return Object.keys(commands).includes(key)
 }
@@ -66,7 +65,7 @@ export function Terminal() {
       output = <GoalsSection />
     } else if (trimmedCommand === "blogs") {
       output = <BlogsSection />
-    } else if (isCommandKey(trimmedCommand)) { // Fixed type check
+    } else if (isCommandKey(trimmedCommand)) {
       output = `Executing ${trimmedCommand} command...`
     }
 
@@ -75,4 +74,55 @@ export function Terminal() {
     setCurrentCommand("")
   }
 
-  // Rest of the component remains unchanged...
+  const handleKeyDown = (e: React.KeyboardEvent) => {
+    if (e.key === "ArrowUp") {
+      e.preventDefault()
+      if (historyIndex < commandHistory.length - 1) {
+        setHistoryIndex((prev) => prev + 1)
+        setCurrentCommand(commandHistory[commandHistory.length - 1 - historyIndex - 1])
+      }
+    } else if (e.key === "ArrowDown") {
+      e.preventDefault()
+      if (historyIndex > 0) {
+        setHistoryIndex((prev) => prev - 1)
+        setCurrentCommand(commandHistory[commandHistory.length - 1 - historyIndex + 1])
+      } else {
+        setHistoryIndex(-1)
+        setCurrentCommand("")
+      }
+    }
+  }
+
+  useEffect(() => {
+    bottomRef.current?.scrollIntoView({ behavior: "smooth" })
+  }, [history])
+
+  return (
+    <div className="font-mono text-sm md:text-base">
+      <div className="text-emerald-600 dark:text-green-400 mb-4">
+        Welcome to my portfolio!
+        <br />
+        Type <span className="text-amber-600 dark:text-yellow-400">help</span> to get a list of available commands.
+        <br />
+        Use <span className="text-amber-600 dark:text-yellow-400">↑</span> and{" "}
+        <span className="text-amber-600 dark:text-yellow-400">↓</span> to navigate command history.
+      </div>
+
+      {history.map((entry, i) => (
+        <div key={i} className="mb-2">
+          <TerminalPrompt command={entry.command} readonly />
+          <TerminalOutput>{entry.output}</TerminalOutput>
+        </div>
+      ))}
+
+      <TerminalPrompt
+        command={currentCommand}
+        setCommand={setCurrentCommand}
+        onSubmit={handleCommand}
+        onKeyDown={handleKeyDown}
+      />
+
+      <div ref={bottomRef} />
+    </div>
+  )
+}
