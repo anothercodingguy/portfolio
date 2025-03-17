@@ -11,10 +11,13 @@ import { SocialsSection } from "./socials-section"
 import { ResumeSection } from "./resume-section"
 import { GoalsSection } from "./goals-section"
 import { BlogsSection } from "./blogs-section"
-import type React from "react"
+import React from "react"  // Changed from type-only import
 
 export function Terminal() {
-  const [history, setHistory] = useState<Array<{ command: string; output: string | JSX.Element }>>([])
+  const [history, setHistory] = useState<Array<{ 
+    command: string; 
+    output: string | React.JSX.Element  // Explicit React namespace
+  }>>([])
   const [commandHistory, setCommandHistory] = useState<string[]>([])
   const [historyIndex, setHistoryIndex] = useState(-1)
   const [currentCommand, setCurrentCommand] = useState("")
@@ -27,7 +30,7 @@ export function Terminal() {
 
     setCommandHistory((prev) => [...prev, command])
 
-    let output: string | JSX.Element = 'Command not found. Type "help" for available commands.'
+    let output: string | React.JSX.Element = 'Command not found. Type "help" for available commands.'
 
     if (trimmedCommand === "help") {
       output = (
@@ -119,4 +122,3 @@ export function Terminal() {
     </div>
   )
 }
-
