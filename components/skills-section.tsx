@@ -11,16 +11,6 @@ export function SkillsSection() {
       ],
     },
     {
-      category: "Backend",
-      skills: [
-        { name: "Node.js", level: 85 },
-        { name: "Express", level: 80 },
-        { name: "Python", level: 75 },
-        { name: "SQL", level: 70 },
-        { name: "MongoDB", level: 75 },
-      ],
-    },
-    {
       category: "Tools & Others",
       skills: [
         { name: "Git", level: 90 },
