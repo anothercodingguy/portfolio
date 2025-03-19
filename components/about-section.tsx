@@ -13,7 +13,7 @@ export function AboutSection() {
       </p>
       <p>
         I believe in writing clean, maintainable code and am constantly learning to improve my craft. My goal is to
-        build applications that not only solve problems but also provide delightful user experiences.
+        build applications that solve problems.
       </p>
       <p className="text-sm text-gray-600 dark:text-gray-400 mt-4">
         Type <span className="text-amber-600 dark:text-yellow-400">projects</span> to see what I&apos;ve been working on!

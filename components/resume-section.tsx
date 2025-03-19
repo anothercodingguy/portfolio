@@ -1,39 +1,32 @@
 export function ResumeSection() {
   const experiences = [
     {
-      role: "Senior Frontend Developer",
-      company: "TechCorp Inc.",
-      period: "2021 - Present",
+      role: "Project Head",
+      company: "MBSOC",
+      period: "2025 - Present",
       description:
         "Lead the frontend development team in building scalable web applications. Implemented modern React patterns and improved performance by 40%.",
     },
     {
-      role: "Full Stack Developer",
-      company: "WebSolutions Ltd.",
-      period: "2018 - 2021",
+      role: "Project Member",
+      company: "Electrovista",
+      period: "2024 - 2025",
       description:
         "Developed and maintained multiple client projects using React, Node.js, and MongoDB. Collaborated with design team to implement responsive UI/UX.",
-    },
-    {
-      role: "Junior Developer",
-      company: "StartupHub",
-      period: "2016 - 2018",
-      description:
-        "Assisted in developing web applications using JavaScript and PHP. Participated in code reviews and implemented bug fixes.",
     },
   ]
 
   const education = [
     {
-      degree: "Master of Computer Science",
-      institution: "Tech University",
-      period: "2014 - 2016",
+      degree: "B.Tech in Computer Science",
+      institution: "Manipal Institute of Technology",
+      period: "2023 - Present",
       description: "Specialized in Software Engineering with focus on web technologies and distributed systems.",
     },
     {
-      degree: "Bachelor of Computer Science",
-      institution: "State University",
-      period: "2010 - 2014",
+      degree: "High School",
+      institution: "City Montessori School",
+      period: "2014 - 2020",
       description: "Graduated with honors. Coursework included data structures, algorithms, and web development.",
     },
   ]

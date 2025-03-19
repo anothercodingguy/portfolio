@@ -4,26 +4,26 @@ export function SocialsSection() {
   const socials = [
     {
       platform: "GitHub",
-      username: "suyash-dev",
+      username: "anothercodingguy",
       url: "https://github.com/suyash-dev",
       icon: Github,
     },
     {
       platform: "LinkedIn",
-      username: "suyashdev",
-      url: "https://linkedin.com/in/suyashdev",
+      username: "anothercodingguy",
+      url: "https://linkedin.com/in/anothercodingguy",
       icon: Linkedin,
     },
     {
       platform: "Twitter",
-      username: "@suyash_dev",
-      url: "https://twitter.com/suyash_dev",
+      username: "@anothercodingguy",
+      url: "https://twitter.com/anothercodingguy",
       icon: Twitter,
     },
     {
       platform: "Email",
-      username: "hello@suyash.dev",
-      url: "mailto:hello@suyash.dev",
+      username: "suyash.strive@gmail.com",
+      url: "mailto:suyash.strive@gmail.com",
       icon: Mail,
     },
   ]
